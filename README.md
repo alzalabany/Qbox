@@ -1,2 +1,0 @@
-# Qbox
-Created with CodeSandbox
