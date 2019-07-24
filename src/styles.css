@@ -2,6 +2,11 @@ html {
   font-size: 15px;
   --gray: rgb(75, 72, 72);
 }
+button {
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0;
+}
 .App {
   position: fixed;
   top: 0;

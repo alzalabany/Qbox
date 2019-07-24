@@ -11,6 +11,7 @@ const Card = styled.div`
     margin: 0;
   }
   > footer {
+    border-top: 1px solid var(--gray);
     padding: 0.5rem 1rem;
     margin: 0;
   }
@@ -46,23 +47,40 @@ const H5 = styled.h5`
 const OL = styled.ol`
   counter-reset: my-awesome-counter;
   list-style: none;
-  padding-left: 40px;
+  padding: 0 0 0 40px;
   > li {
-    margin: 0 auto 0.5rem 0;
+    margin: 0 auto 1rem 0;
     counter-increment: my-awesome-counter;
+    list-style-type: A;
     position: relative;
-    height: 3rem;
+    min-height: 33px;
     padding-left: 1rem;
-    line-height: 2;
+    line-height: 1;
     font-size: 16px;
   }
 
+  > li > button {
+    background-color: #fff;
+    text-align: left;
+    margin: 0;
+    padding-left: 0;
+    width: 100%;
+    display: block;
+  }
+  button:active {
+    background-color: green;
+  }
+  button:hover {
+  }
+
   > li:hover::before {
-    border-width: 3px;
+    border: 3px solid green;
+    background-color: green;
+    color: #fff;
   }
 
   > li::before {
-    content: counter(my-awesome-counter);
+    content: counter(my-awesome-counter, upper-alpha);
     color: #222;
     font-size: 1.5rem;
     font-weight: bold;
@@ -87,17 +105,21 @@ const P = styled.div`
   margin: 0.5rem 0;
   padding: 1em;
   position: relative;
-
-  > button {
-    color: #fff;
-    background-color: red;
-    float: right;
+  > label {
+    font-weight: bold;
   }
 
   > span {
     width: 1.4rem;
     text-align: left;
     display: inline-block;
+  }
+
+  > button {
+    color: #fff;
+    background-color: rgb(230, 72, 75);
+    float: right;
+    margin-top: -6px;
   }
 `;
 
@@ -111,15 +133,22 @@ function App() {
         </header>
         <P>
           <span>X</span>
-          unfortunately, then answer is incorrect
-          <buttton> next question -> </buttton>
+          <label>unfortunately,</label> then answer is incorrect
+          <button> try again ⟳</button>
         </P>
         <section>
           <OL>
+            <li>
+              <button>Jest</button>
+            </li>
             <li>Jest</li>
             <li>Jest</li>
-            <li>Jest</li>
-            <li>Jest</li>
+            <li>
+              <button>
+                Jest content: counter(my-awesome-counter); content:
+                counter(my-awesome-counter);
+              </button>
+            </li>
           </OL>
         </section>
         <footer>
