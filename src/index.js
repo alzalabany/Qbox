@@ -8,6 +8,7 @@ const Card = styled.div`
   > header,
   > section {
     padding: 1rem;
+    margin: 0;
   }
 `;
 
@@ -33,7 +34,14 @@ const OL = styled.ol`
     position: relative;
     height: 3rem;
     padding-left: 1rem;
+    line-height: 2;
+    font-size: 16px;
   }
+
+  > li:hover::before {
+    border-width: 3px;
+  }
+
   > li::before {
     content: counter(my-awesome-counter);
     color: #222;
@@ -46,9 +54,31 @@ const OL = styled.ol`
     width: var(--size);
     height: var(--size);
     top: 0;
-    border: 2px solid black;
+    border: 3px solid black;
     border-radius: 4px;
     text-align: center;
+  }
+`;
+
+const P = styled.div`
+  background-color: rgba(234, 90, 94, 1);
+  color: #fff;
+  font-size: 16px;
+  display: block;
+  margin: 0.5rem 0;
+  padding: 1em;
+  position: relative;
+
+  > button {
+    color: #fff;
+    background-color: red;
+    float: right;
+  }
+
+  > span {
+    width: 1.4rem;
+    text-align: left;
+    display: inline-block;
   }
 `;
 
@@ -60,10 +90,16 @@ function App() {
           <Label>Question 1 of 5</Label>
           <H5> Tools to do testing includes </H5>
         </header>
+        <P>
+          <span>X</span>
+          unfortunately, then answer is incorrect
+          <buttton> next question -> </buttton>
+        </P>
         <section>
           <OL>
             <li>Jest</li>
-
+            <li>Jest</li>
+            <li>Jest</li>
             <li>Jest</li>
           </OL>
         </section>
