@@ -10,6 +10,25 @@ const Card = styled.div`
     padding: 1rem;
     margin: 0;
   }
+  > footer {
+    padding: 0.5rem 1rem;
+    margin: 0;
+  }
+  > footer > p {
+    display: inline-block;
+    color: var(--gray);
+    text-transform: capitalize;
+  }
+  > footer > button {
+    margin-right: 1rem;
+    background-color: rgb(51, 118, 177);
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+  }
+  > footer > button:last-of-type {
+    background-color: var(--gray);
+  }
 `;
 
 const Label = styled.span`
@@ -103,6 +122,14 @@ function App() {
             <li>Jest</li>
           </OL>
         </section>
+        <footer>
+          <button>Skip Question ➡</button>
+          <button>review topic ▶</button>
+          <p>
+            {" "}
+            review topic is required so you can revise you knowledge in top{" "}
+          </p>
+        </footer>
       </Card>
     </div>
   );
